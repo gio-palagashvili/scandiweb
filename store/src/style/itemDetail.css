@@ -1,0 +1,129 @@
+@font-face {
+  font-family: "r-regular";
+  src: url(../assets/fonts/raleway/Raleway-Regular.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: "r-semibold";
+  src: url(../assets/fonts/raleway/Raleway-SemiBold.ttf);
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../assets/fonts/roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "sans-light";
+  src: url("../assets/fonts/sans/SourceSansPro-Light.otf");
+}
+.detail-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  width: 100%;
+}
+.detail-container .carussel::-webkit-scrollbar {
+  display: none;
+}
+.detail-container .carussel {
+  width: 10%;
+  max-height: 750px;
+  overflow-y: scroll;
+}
+.detail-container .carussel img {
+  cursor: pointer;
+  width: 100px;
+}
+.detail-container .main-image img {
+  width: 500px;
+}
+.detail-container .details {
+  margin-left: 5%;
+}
+.detail-container .details h1 {
+  font-family: "r-semibold";
+}
+.detail-container .details h2 {
+  margin-bottom: 20%;
+  font-family: "r-regular";
+}
+.detail-container .details .attr h3 {
+  font-family: "roboto";
+  text-transform: uppercase;
+  margin-top: 10%;
+  font-size: 18px !important;
+}
+.detail-container .details .attr ul {
+  display: flex;
+  margin-bottom: 4%;
+}
+.detail-container .details .attr ul li {
+  list-style: none;
+  margin-right: 5px;
+}
+.detail-container .details .attr ul .color-button {
+  margin-top: 10px;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  border: none;
+}
+.detail-container .details .attr ul .color-button:focus {
+  background-clip: content-box;
+  padding: 1px;
+  border: 1px solid #56bf72;
+  position: relative;
+}
+.detail-container .details .attr ul .other-attr {
+  font-family: "sans-light";
+  font-weight: bolder;
+  border-radius: 2px;
+  border: 1px solid #1d1f22;
+  background-color: transparent;
+  margin-top: 10px;
+  padding: 12px;
+  width: 60px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.detail-container .details .attr ul .selected {
+  background-color: #1d1f22;
+  color: white;
+}
+.detail-container .details .attr ul .other-attr:hover {
+  background-color: #1d1f22;
+  color: white;
+}
+.detail-container .details .price {
+  margin-top: 10%;
+}
+.detail-container .details .price h4 {
+  margin-top: 12%;
+  font-family: "roboto";
+  text-transform: uppercase;
+  font-size: 18px !important;
+}
+.detail-container .details .price h3 {
+  font-family: "r-semibold";
+  text-transform: uppercase;
+  font-size: 24px;
+  margin-top: 2%;
+}
+.detail-container .details .price button {
+  margin-top: 10%;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: "r-semibold";
+  cursor: pointer;
+  width: 292px;
+  height: 52px;
+  background-color: #5ece7b;
+  width: 100%;
+}
+.detail-container .details .price button:hover {
+  background-color: #56bf72;
+}
+.detail-container .details .price p {
+  margin-top: 10%;
+  font-family: roboto;
+}/*# sourceMappingURL=itemDetail.css.map */

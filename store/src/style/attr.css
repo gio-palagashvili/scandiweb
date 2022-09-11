@@ -1,0 +1,70 @@
+.attr {
+  margin-top: 2%;
+}
+.attr h3 {
+  font-family: "roboto";
+  text-transform: uppercase;
+  margin-top: 10%;
+  font-size: 18px !important;
+}
+.attr ul {
+  display: flex;
+  margin-bottom: 1%;
+}
+.attr ul li {
+  list-style: none;
+  margin-right: 5px;
+}
+.attr ul .color-button {
+  margin-top: 10px;
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+  border: none;
+}
+.attr ul .color-button-selected {
+  background-clip: content-box;
+  padding: 1px;
+  border: 1px solid #56bf72;
+  position: relative;
+}
+.attr ul .other-attr {
+  font-family: "sans-light";
+  font-weight: bolder;
+  border-radius: 2px;
+  border: 1px solid #1d1f22;
+  background-color: transparent;
+  margin-top: 10px;
+  padding: 12px;
+  width: 60px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.attr ul .selected {
+  background-color: #1d1f22;
+  color: white;
+}
+.attr ul .other-attr:hover {
+  background-color: #1d1f22;
+  color: white;
+}
+
+.increment {
+  font-family: "sans-light";
+  font-weight: lighter;
+  font-weight: bolder;
+  border-radius: 2px;
+  border: 1px solid #1d1f22;
+  background-color: transparent;
+  padding: 12px;
+  width: 50px;
+  font-size: 20px;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.increment:hover {
+  background-color: #1d1f22;
+  color: white;
+}/*# sourceMappingURL=attr.css.map */

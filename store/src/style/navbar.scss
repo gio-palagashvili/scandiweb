@@ -1,0 +1,116 @@
+$fontColor: #1d1f22;
+$focussedColor: #5ece7b;
+@font-face {
+  font-family: "r-regular";
+  src: url(../assets//fonts/raleway/Raleway-Regular.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: "r-semibold";
+  src: url(../assets/fonts/raleway/Raleway-SemiBold.ttf);
+}
+
+.closed {
+  display: none;
+}
+.nav-wrapper {
+  display: flex;
+  height: 20%;
+  width: 100%;
+  .text {
+    margin-top: 1.5%;
+    width: 55%;
+    .focussed {
+      padding-bottom: 3%;
+      display: inline-block;
+      border-bottom: 2px solid $focussedColor;
+      padding-left: 20px;
+      padding-right: 20px;
+      text-align: center;
+      a {
+        color: $focussedColor;
+      }
+    }
+    ul {
+      display: flex;
+      li {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-right: 1%;
+        list-style: none;
+      }
+      a {
+        font-family: r-regular;
+        text-decoration: none;
+        color: $fontColor;
+        font-weight: 400;
+        font-size: 16px;
+        text-transform: uppercase;
+        line-height: 120%;
+      }
+      a:hover {
+        color: $focussedColor;
+      }
+    }
+  }
+  .logo {
+    margin-top: 1.5%;
+    width: 33%;
+    align-items: center;
+  }
+  .cart-div {
+    display: flex;
+    width: 33%;
+    justify-content: flex-end;
+    h1 {
+      font-size: 18px;
+      font-family: "r-semibold";
+      margin-right: 5px;
+      cursor: pointer;
+    }
+    img {
+      cursor: pointer;
+    }
+    .currency-div {
+      position: absolute;
+      width: fit-content;
+      text-align: center;
+      top: 5%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      background-color: white;
+      ul {
+        margin: auto;
+      }
+      li {
+        font-size: 14px;
+        width: 100%;
+        margin-top: 3%;
+        list-style: none;
+        padding: 15px;
+        cursor: pointer;
+        a {
+          font-family: "r-semibold";
+        }
+      }
+      li:hover {
+        background-color: #eeeeee;
+      }
+    }
+    a {
+      display: flex;
+      align-items: center;
+    }
+    .arrow {
+      margin-left: -10%;
+      margin-top: 20%;
+    }
+    .arrowRotated {
+      margin-left: -10%;
+      margin-top: 20%;
+      transform: rotate(180deg);
+    }
+    .cartIcon {
+      margin-left: 2%;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+@font-face {
+  font-family: "r-regular";
+  src: url(../assets//fonts/raleway/Raleway-Regular.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: "r-semibold";
+  src: url(../assets/fonts/raleway/Raleway-SemiBold.ttf);
+}
+.closed {
+  display: none;
+}
+
+.nav-wrapper {
+  display: flex;
+  height: 20%;
+  width: 100%;
+}
+.nav-wrapper .text {
+  margin-top: 1.5%;
+  width: 55%;
+}
+.nav-wrapper .text .focussed {
+  padding-bottom: 3%;
+  display: inline-block;
+  border-bottom: 2px solid #5ece7b;
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: center;
+}
+.nav-wrapper .text .focussed a {
+  color: #5ece7b;
+}
+.nav-wrapper .text ul {
+  display: flex;
+}
+.nav-wrapper .text ul li {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: 1%;
+  list-style: none;
+}
+.nav-wrapper .text ul a {
+  font-family: r-regular;
+  text-decoration: none;
+  color: #1d1f22;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: uppercase;
+  line-height: 120%;
+}
+.nav-wrapper .text ul a:hover {
+  color: #5ece7b;
+}
+.nav-wrapper .logo {
+  margin-top: 1.5%;
+  width: 33%;
+  align-items: center;
+}
+.nav-wrapper .cart-div {
+  display: flex;
+  width: 33%;
+  justify-content: flex-end;
+}
+.nav-wrapper .cart-div h1 {
+  font-size: 18px;
+  font-family: "r-semibold";
+  margin-right: 5px;
+  cursor: pointer;
+}
+.nav-wrapper .cart-div img {
+  cursor: pointer;
+}
+.nav-wrapper .cart-div .currency-div {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  top: 5%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: white;
+}
+.nav-wrapper .cart-div .currency-div ul {
+  margin: auto;
+}
+.nav-wrapper .cart-div .currency-div li {
+  font-size: 14px;
+  width: 100%;
+  margin-top: 3%;
+  list-style: none;
+  padding: 15px;
+  cursor: pointer;
+}
+.nav-wrapper .cart-div .currency-div li a {
+  font-family: "r-semibold";
+}
+.nav-wrapper .cart-div .currency-div li:hover {
+  background-color: #eeeeee;
+}
+.nav-wrapper .cart-div a {
+  display: flex;
+  align-items: center;
+}
+.nav-wrapper .cart-div .arrow {
+  margin-left: -10%;
+  margin-top: 20%;
+}
+.nav-wrapper .cart-div .arrowRotated {
+  margin-left: -10%;
+  margin-top: 20%;
+  transform: rotate(180deg);
+}
+.nav-wrapper .cart-div .cartIcon {
+  margin-left: 2%;
+}/*# sourceMappingURL=navbar.css.map */

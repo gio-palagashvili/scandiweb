@@ -1,0 +1,136 @@
+@font-face {
+  font-family: "r-regular";
+  src: url(../assets/fonts/raleway/Raleway-Regular.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: "r-semibold";
+  src: url(../assets/fonts/raleway/Raleway-SemiBold.ttf);
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../assets/fonts/roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "sans-light";
+  src: url("../assets/fonts/sans/SourceSansPro-Light.otf");
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+  width: 100%;
+  .carussel::-webkit-scrollbar {
+    display: none;
+  }
+  .carussel {
+    width: 10%;
+    max-height: 750px;
+    overflow-y: scroll;
+
+    img {
+      cursor: pointer;
+      width: 100px;
+    }
+  }
+  .main-image {
+    img {
+      width: 500px;
+    }
+  }
+  .details {
+    margin-left: 5%;
+    h1 {
+      font-family: "r-semibold";
+    }
+    h2 {
+      margin-bottom: 20%;
+      font-family: "r-regular";
+    }
+    .attr {
+      h3 {
+        font-family: "roboto";
+        text-transform: uppercase;
+        margin-top: 10%;
+        font-size: 18px !important;
+      }
+      ul {
+        display: flex;
+        margin-bottom: 4%;
+        li {
+          list-style: none;
+          margin-right: 5px;
+        }
+        .color-button {
+          margin-top: 10px;
+          height: 35px;
+          width: 35px;
+          cursor: pointer;
+          border: none;
+        }
+        .color-button:focus {
+          background-clip: content-box;
+          padding: 1px;
+          border: 1px solid #56bf72;
+          position: relative;
+        }
+        .other-attr {
+          font-family: "sans-light";
+          font-weight: bolder;
+          border-radius: 2px;
+          border: 1px solid #1d1f22;
+          background-color: transparent;
+          margin-top: 10px;
+          padding: 12px;
+          width: 60px;
+          cursor: pointer;
+          transition: 0.5s;
+        }
+        .selected {
+          background-color: #1d1f22;
+          color: white;
+        }
+
+        .other-attr:hover {
+          background-color: #1d1f22;
+          color: white;
+        }
+      }
+    }
+    .price {
+      margin-top: 10%;
+      h4 {
+        margin-top: 12%;
+        font-family: "roboto";
+        text-transform: uppercase;
+        font-size: 18px !important;
+      }
+      h3 {
+        font-family: "r-semibold";
+        text-transform: uppercase;
+        font-size: 24px;
+        margin-top: 2%;
+      }
+      button {
+        margin-top: 10%;
+        border: none;
+        color: white;
+        text-transform: uppercase;
+        font-family: "r-semibold";
+        cursor: pointer;
+        width: 292px;
+        height: 52px;
+        background-color: #5ece7b;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #56bf72;
+      }
+      p {
+        margin-top: 10%;
+        font-family: roboto;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@font-face {
+  font-family: "r-regular";
+  src: url(../assets/fonts/raleway/Raleway-Regular.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: "r-bold";
+  src: url(../assets/fonts/raleway/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../assets/fonts/roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "sans-light";
+  src: url("../assets/fonts/sans/SourceSansPro-Light.otf");
+}
+
+.cart-wrapper {
+  width: 100%;
+  margin-top: 5%;
+  hr {
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+  h2 {
+    font-family: "r-bold";
+  }
+  .title {
+    font-size: 32px;
+    text-transform: uppercase;
+  }
+  .item-wrapper {
+    display: flex;
+    justify-content: space-between;
+    .sup {
+      font-family: "r-regular";
+      margin-top: 0.7%;
+      margin-bottom: 0.7%;
+    }
+    .prices {
+      font-family: "r-bold";
+    }
+    .gallery {
+      display: flex;
+      justify-content: space-between;
+      width: 20%;
+      .quantity {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .number {
+          font-family: "r-semibold";
+        }
+      }
+      .image {
+        width: 100%;
+        margin-left: 10%;
+        margin-top: 5%;
+        img {
+          max-height: 100%;
+          max-width: 100%;
+        }
+        .arrows {
+          margin-left: 70%;
+          margin-top: -20%;
+          button {
+            background: rgba(0, 0, 0, 0.73);
+            opacity: 0.5;
+            color: white;
+            border: none;
+            padding: 5px;
+            width: 20px;
+            cursor: pointer;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
