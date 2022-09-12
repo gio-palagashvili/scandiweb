@@ -95,7 +95,9 @@ class Nav extends Component {
               />
               {this.context.state.itemsInCart.length > 0 ? (
                 <div className="circle">
-                  {this.context.state.itemsInCart.length}
+                  {this.context.state.itemsInCart.reduce((acc, item) => {
+                    return acc + item.quantity;
+                  }, 0)}
                 </div>
               ) : (
                 ""
