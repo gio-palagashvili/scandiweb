@@ -45,6 +45,16 @@ export class AppProvider extends Component {
     handleCartClick = () => {
         this.setState({ ...this.state, cartOpen: !this.state.cartOpen });
     }
+    currencyOutsideClick = () => {
+        this.setState({
+            ...this.context.state, currencyOpen: false
+        });
+    }
+    cartOutsideClick = () => {
+        this.setState({
+            ...this.context.state, cartOpen: false
+        });
+    }
     handleCurrencyClick = () => {
         this.setState({ ...this.state, currencyOpen: !this.state.currencyOpen });
     }
@@ -109,11 +119,30 @@ export class AppProvider extends Component {
             localStorage.setItem("cart", JSON.stringify(this.state.itemsInCart));
         });
     }
+    addCartDefault = (product) => {
+        const item = {
+            product,
+            quantity: 1,
+            selectedAttributes: {}
+        }
+        product.attributes.map(attr => {
+            const attrA = attr.name;
+            const attrB = attr.items[0].value;
+
+            item.selectedAttributes = {
+                ...item.selectedAttributes, [attr.name]: attrB
+            }
+        })
+        this.addToCart(item);
+    }
     render() {
         const state = this.state;
-        const { handleCurrencyClick, handleCurrencyChange,
+        const {
+            handleCurrencyClick, handleCurrencyChange,
             handleCartClick, addToCart, editProduct,
-            handleQuantity, handleOrder } = this;
+            handleQuantity, handleOrder, currencyOutsideClick,
+            addCartDefault, cartOutsideClick
+        } = this;
 
         return (
             <AppContext.Provider value={{
@@ -124,10 +153,13 @@ export class AppProvider extends Component {
                 addToCart,
                 editProduct,
                 handleQuantity,
-                handleOrder
+                addCartDefault,
+                handleOrder,
+                currencyOutsideClick,
+                cartOutsideClick,
             }}>
                 {this.props.children}
-            </AppContext.Provider>
+            </AppContext.Provider >
         )
     }
 }

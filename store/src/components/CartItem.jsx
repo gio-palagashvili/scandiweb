@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Attr from "./Attr";
+import Attr from "./Attributes/Attr";
 import { AppContext } from "./context/AppContext";
 
 class CartItem extends Component {

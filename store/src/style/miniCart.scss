@@ -1,2 +1,141 @@
-.mini-cart-wrapper {
+@font-face {
+  font-family: "r-regular";
+  src: url(../assets/fonts/raleway/Raleway-Regular.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: "r-bold";
+  src: url(../assets/fonts/raleway/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: "r-light";
+  src: url(../assets/fonts/raleway/Raleway-Light.ttf);
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../assets/fonts/roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "sans-light";
+  src: url("../assets/fonts/sans/SourceSansPro-Light.otf");
+}
+
+.mini-cart-overlay {
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 93.9%;
+  position: absolute;
+  left: 0;
+  transition: 1s;
+  .mini-cart-wrapper::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mini-cart-wrapper {
+    overflow-y: scroll;
+    max-height: 70vh;
+    padding-left: 10px;
+    position: absolute;
+    right: 15%;
+    background-color: white;
+    width: 20%;
+    .buttons {
+      margin-bottom: 50px;
+      p {
+        margin-bottom: 5%;
+        font-family: "r-bold";
+        span {
+          margin-left: 60%;
+        }
+      }
+      .view {
+        text-transform: uppercase;
+        font-family: "r-bold";
+        background-color: transparent;
+        color: #1d1f22;
+        border: 1px solid #1d1f22;
+        width: 48%;
+        height: 43px;
+        margin-right: 2%;
+        cursor: pointer;
+        transition: 0.4s;
+      }
+      .view:hover {
+        background-color: #1d1f22;
+        color: white;
+      }
+      button {
+        cursor: pointer;
+        text-transform: uppercase;
+        font-family: "r-bold";
+        border: none;
+        width: 48%;
+        height: 43px;
+        background: #5ece7b;
+        color: white;
+      }
+      button:hover {
+        background: #54b36d;
+      }
+    }
+    .mini-cart-item {
+      display: flex;
+      margin-bottom: 7%;
+    }
+    .bag {
+      margin-top: 5%;
+      font-family: "r-bold";
+      margin-bottom: 5%;
+      span {
+        font-family: "r-regular";
+      }
+    }
+    h4 {
+      margin-top: 2%;
+    }
+    .text-section {
+      font-family: "r-regular";
+      width: 40%;
+    }
+    .price {
+      font-family: "r-bold";
+    }
+    .no-hover {
+      pointer-events: none;
+    }
+    .attr {
+      h4 {
+        font-family: "r-bold";
+      }
+      .other-attr {
+        width: fit-content;
+        padding: 2px;
+      }
+      .color-button {
+        width: 20px;
+        height: 20px;
+        padding: 2px;
+      }
+    }
+    .increment-section {
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      .increment {
+        width: 25px;
+        height: 25px;
+        padding: 0px;
+      }
+    }
+    .pictures-section {
+      width: 40%;
+      margin-left: 5%;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
 }

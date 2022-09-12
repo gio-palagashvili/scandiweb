@@ -9,6 +9,9 @@ import { AppContext } from "./context/AppContext";
 
 class Category extends Component {
   static contextType = AppContext;
+  handldeAddCartDefault = (item) => {
+    this.context.addCartDefault(item);
+  };
   render() {
     return (
       <>
@@ -32,19 +35,15 @@ class Category extends Component {
                   const prices = item.prices;
 
                   return (
-                    <Link
+                    <Item
                       key={index}
-                      to={
-                        item.inStock ? `/${data.category.name}/${item.id}` : ""
-                      }
-                    >
-                      <Item
-                        stock={item.inStock}
-                        image={item.gallery[0]}
-                        name={item.name}
-                        prices={prices}
-                      />
-                    </Link>
+                      stock={item.inStock}
+                      image={item.gallery[0]}
+                      name={item.name}
+                      linked={`/${data.category.name}/${item.id}`}
+                      clicked={() => this.handldeAddCartDefault(item)}
+                      prices={prices}
+                    />
                   );
                 });
               }}

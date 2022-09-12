@@ -15,7 +15,7 @@ class App extends React.Component {
     }
   }
   componentDidMount() {
-    const { error, data } = client
+    client
       .query({
         query: LOAD_CATEGORIES,
       })

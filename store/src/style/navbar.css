@@ -7,6 +7,10 @@
   font-family: "r-semibold";
   src: url(../assets/fonts/raleway/Raleway-SemiBold.ttf);
 }
+@font-face {
+  font-family: "roboto";
+  src: url("../assets/fonts/roboto/Roboto-Medium.ttf");
+}
 .closed {
   display: none;
 }
@@ -113,4 +117,19 @@
 }
 .nav-wrapper .cart-div .cartIcon {
   margin-left: 2%;
+}
+.nav-wrapper .cart-div .circle {
+  background: #000;
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+  padding-top: 3px;
+  color: white;
+  position: absolute;
+  top: 1%;
+  right: 17%;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  font-family: "roboto";
 }/*# sourceMappingURL=navbar.css.map */

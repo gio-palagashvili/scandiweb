@@ -68,6 +68,7 @@
 .cart-wrapper .item-wrapper .gallery .image .arrows {
   margin-left: 70%;
   margin-top: -20%;
+  z-index: -1;
 }
 .cart-wrapper .item-wrapper .gallery .image .arrows button {
   background: rgba(0, 0, 0, 0.73);

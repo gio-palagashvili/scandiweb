@@ -23,6 +23,12 @@ export const LOAD_CATEGORY_ITEMS = gql`
         id
         gallery
         inStock
+          attributes {
+          items {
+            value
+          }
+            name
+          }
         prices {
           currency {
             symbol
@@ -30,6 +36,7 @@ export const LOAD_CATEGORY_ITEMS = gql`
           }
           amount
         }
+
       }
       name
     }

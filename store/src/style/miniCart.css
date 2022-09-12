@@ -1,1 +1,139 @@
-/*# sourceMappingURL=miniCart.css.map */
+@font-face {
+  font-family: "r-regular";
+  src: url(../assets/fonts/raleway/Raleway-Regular.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: "r-bold";
+  src: url(../assets/fonts/raleway/Raleway-Bold.ttf);
+}
+@font-face {
+  font-family: "r-light";
+  src: url(../assets/fonts/raleway/Raleway-Light.ttf);
+}
+@font-face {
+  font-family: "roboto";
+  src: url("../assets/fonts/roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: "sans-light";
+  src: url("../assets/fonts/sans/SourceSansPro-Light.otf");
+}
+.mini-cart-overlay {
+  z-index: 200;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 93.9%;
+  position: absolute;
+  left: 0;
+  transition: 1s;
+}
+.mini-cart-overlay .mini-cart-wrapper::-webkit-scrollbar {
+  display: none;
+}
+.mini-cart-overlay .mini-cart-wrapper {
+  overflow-y: scroll;
+  max-height: 70vh;
+  padding-left: 10px;
+  position: absolute;
+  right: 15%;
+  background-color: white;
+  width: 20%;
+}
+.mini-cart-overlay .mini-cart-wrapper .buttons {
+  margin-bottom: 50px;
+}
+.mini-cart-overlay .mini-cart-wrapper .buttons p {
+  margin-bottom: 5%;
+  font-family: "r-bold";
+}
+.mini-cart-overlay .mini-cart-wrapper .buttons p span {
+  margin-left: 60%;
+}
+.mini-cart-overlay .mini-cart-wrapper .buttons .view {
+  text-transform: uppercase;
+  font-family: "r-bold";
+  background-color: transparent;
+  color: #1d1f22;
+  border: 1px solid #1d1f22;
+  width: 48%;
+  height: 43px;
+  margin-right: 2%;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.mini-cart-overlay .mini-cart-wrapper .buttons .view:hover {
+  background-color: #1d1f22;
+  color: white;
+}
+.mini-cart-overlay .mini-cart-wrapper .buttons button {
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "r-bold";
+  border: none;
+  width: 48%;
+  height: 43px;
+  background: #5ece7b;
+  color: white;
+}
+.mini-cart-overlay .mini-cart-wrapper .buttons button:hover {
+  background: #54b36d;
+}
+.mini-cart-overlay .mini-cart-wrapper .mini-cart-item {
+  display: flex;
+  margin-bottom: 7%;
+}
+.mini-cart-overlay .mini-cart-wrapper .bag {
+  margin-top: 5%;
+  font-family: "r-bold";
+  margin-bottom: 5%;
+}
+.mini-cart-overlay .mini-cart-wrapper .bag span {
+  font-family: "r-regular";
+}
+.mini-cart-overlay .mini-cart-wrapper h4 {
+  margin-top: 2%;
+}
+.mini-cart-overlay .mini-cart-wrapper .text-section {
+  font-family: "r-regular";
+  width: 40%;
+}
+.mini-cart-overlay .mini-cart-wrapper .price {
+  font-family: "r-bold";
+}
+.mini-cart-overlay .mini-cart-wrapper .no-hover {
+  pointer-events: none;
+}
+.mini-cart-overlay .mini-cart-wrapper .attr h4 {
+  font-family: "r-bold";
+}
+.mini-cart-overlay .mini-cart-wrapper .attr .other-attr {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 2px;
+}
+.mini-cart-overlay .mini-cart-wrapper .attr .color-button {
+  width: 20px;
+  height: 20px;
+  padding: 2px;
+}
+.mini-cart-overlay .mini-cart-wrapper .increment-section {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.mini-cart-overlay .mini-cart-wrapper .increment-section .increment {
+  width: 25px;
+  height: 25px;
+  padding: 0px;
+}
+.mini-cart-overlay .mini-cart-wrapper .pictures-section {
+  width: 40%;
+  margin-left: 5%;
+}
+.mini-cart-overlay .mini-cart-wrapper .pictures-section img {
+  max-width: 100%;
+  max-height: 100%;
+}/*# sourceMappingURL=miniCart.css.map */

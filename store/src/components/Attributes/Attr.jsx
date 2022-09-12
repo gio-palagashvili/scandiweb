@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import "../style/attr.css";
+import "../../style/attr.css";
 
 class Attr extends Component {
-  constructor(props) {
-    super(props);
-  }
   render() {
     return (
       <>

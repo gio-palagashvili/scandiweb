@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import { LOAD_ITEM_BY_ID } from "./GraphQL/Queries";
 import { Query } from "@apollo/client/react/components";
 import "../style/itemDetail.css";
-import Attribute from "./Attribute";
+import Attribute from "./Attributes/Attribute";
 import { AppContext } from "./context/AppContext";
 
 class ItemDetail extends Component {

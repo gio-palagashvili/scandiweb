@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { AppContext } from "./context/AppContext";
 
 class Item extends Component {
@@ -34,30 +35,40 @@ class Item extends Component {
         }}
       >
         <div className="p-div">
-          {!this.props.stock ? <h3 className="out-stock">OUT OF STOCK</h3> : ""}
-          <img
-            src={this.props.image}
-            alt="imageexam"
-            className="product-image"
-          />
+          <Link to={this.props.stock ? this.props.linked : ""}>
+            {!this.props.stock ? (
+              <h3 className="out-stock">OUT OF STOCK</h3>
+            ) : (
+              ""
+            )}
+            <img
+              src={this.props.image}
+              alt="imageexam"
+              className="product-image"
+            />
+          </Link>
           <img
             src={require("../assets/icons/Item/circleCart.svg")}
             alt="add to cart"
             style={style}
+            onClick={this.props.clicked}
             className="add-cart"
           />
-          <h4>{this.props.name}</h4>
-          <span>
-            {this.props.prices.map((price, index) => {
-              if (
-                price.currency.symbol ===
-                localStorage.getItem("currentCurrency")
-              ) {
-                return `${localStorage.getItem("currentCurrency")} 
+
+          <Link to={this.props.stock ? this.props.linked : ""}>
+            <h4>{this.props.name}</h4>
+            <span>
+              {this.props.prices.map((price, index) => {
+                if (
+                  price.currency.symbol ===
+                  localStorage.getItem("currentCurrency")
+                ) {
+                  return `${localStorage.getItem("currentCurrency")} 
                 ${price.amount}`;
-              }
-            })}
-          </span>
+                }
+              })}
+            </span>
+          </Link>
         </div>
       </div>
     );
