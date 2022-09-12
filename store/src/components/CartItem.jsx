@@ -10,7 +10,6 @@ class CartItem extends Component {
       index: 0,
     };
   }
-
   handleNextImage = () => {
     const len = this.props.item.product.gallery.length;
     if (this.state.index === len - 1) {

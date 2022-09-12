@@ -79,4 +79,36 @@
       }
     }
   }
+  .payment {
+    display: flex;
+    h3 {
+      font-family: "r-regular";
+      font-size: 22px;
+    }
+    p {
+      font-size: 22px;
+      margin-left: 20px;
+      font-family: "r-semibold";
+    }
+  }
+  .order {
+    font-family: "r-regular";
+    margin-top: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    border: none;
+    width: 279px;
+    height: 43px;
+    background-color: #5ece7b;
+    color: white;
+    font-weight: 600;
+  }
+  .order:hover {
+    background-color: #52b26c;
+  }
+  .empty {
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    font-family: "r-regular";
+  }
 }

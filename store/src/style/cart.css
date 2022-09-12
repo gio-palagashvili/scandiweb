@@ -78,4 +78,36 @@
   width: 20px;
   cursor: pointer;
   margin-right: 5px;
+}
+.cart-wrapper .payment {
+  display: flex;
+}
+.cart-wrapper .payment h3 {
+  font-family: "r-regular";
+  font-size: 22px;
+}
+.cart-wrapper .payment p {
+  font-size: 22px;
+  margin-left: 20px;
+  font-family: "r-semibold";
+}
+.cart-wrapper .order {
+  font-family: "r-regular";
+  margin-top: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: none;
+  width: 279px;
+  height: 43px;
+  background-color: #5ece7b;
+  color: white;
+  font-weight: 600;
+}
+.cart-wrapper .order:hover {
+  background-color: #52b26c;
+}
+.cart-wrapper .empty {
+  text-transform: capitalize;
+  margin-bottom: 20px;
+  font-family: "r-regular";
 }/*# sourceMappingURL=cart.css.map */

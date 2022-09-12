@@ -90,9 +90,11 @@ export class AppProvider extends Component {
     }
     handleQuantity = (productId, quantity) => {
         let newState = this.state.itemsInCart;
-        newState = newState.map((item) => {
+        newState = newState.filter((item) => {
             if (item.product.id === productId) {
-                console.log(item)
+                if (item.quantity + quantity === 0) {
+                    return;
+                }
                 item.quantity += quantity;
                 return item;
             }
@@ -102,9 +104,16 @@ export class AppProvider extends Component {
             localStorage.setItem("cart", JSON.stringify(this.state.itemsInCart))
         });
     }
+    handleOrder = () => {
+        this.setState({ ...this.state, itemsInCart: [] }, () => {
+            localStorage.setItem("cart", JSON.stringify(this.state.itemsInCart));
+        });
+    }
     render() {
         const state = this.state;
-        const { handleCurrencyClick, handleCurrencyChange, handleCartClick, addToCart, editProduct, handleQuantity } = this;
+        const { handleCurrencyClick, handleCurrencyChange,
+            handleCartClick, addToCart, editProduct,
+            handleQuantity, handleOrder } = this;
 
         return (
             <AppContext.Provider value={{
@@ -115,6 +124,7 @@ export class AppProvider extends Component {
                 addToCart,
                 editProduct,
                 handleQuantity,
+                handleOrder
             }}>
                 {this.props.children}
             </AppContext.Provider>
