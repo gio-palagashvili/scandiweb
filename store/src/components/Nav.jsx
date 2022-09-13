@@ -11,18 +11,22 @@ class Nav extends Component {
     this.currencyRef = React.createRef();
     this.cartRef = React.createRef();
   }
-  handler = (event) => {
-    if (this.cartRef.current && !this.cartRef.current.contains(event.target)) {
+  currhandler = (event) => {
+    if (!this.currencyRef.current.contains(event.target)) {
+      this.context.currencyOutsideClick();
+    }
+  };
+  cartHandler = (event) => {
+    if (!this.cartRef.current.contains(event.target)) {
       this.context.cartOutsideClick();
-    } else {
-      console.log("s");
     }
   };
   componentDidMount = () => {
-    document.addEventListener("mousedown", this.handler);
+    document.addEventListener("mousedown", this.currhandler);
+    // document.addEventListener("mousedown", this.cartHandler);
   };
   componentWillUnmount = () => {
-    document.removeEventListener("mousedown", this.handler);
+    document.removeEventListener("mousedown", this.currhandler);
   };
   render() {
     return (
@@ -53,7 +57,10 @@ class Nav extends Component {
             />
           </div>
           <div className="cart-div">
-            <a onMouseDown={this.context.handleCurrencyClick}>
+            <a
+              onClick={this.context.handleCurrencyClick}
+              ref={this.currencyRef}
+            >
               <h1>{localStorage.getItem("currentCurrency")}</h1>
               <img
                 src={require("../assets/icons/nav/arrow.svg")}
@@ -84,7 +91,7 @@ class Nav extends Component {
                 })}
               </ul>
             </div>
-            <a className="cartIcon" onMouseDown={this.context.handleCartClick}>
+            <a className="cartIcon" onClick={this.context.handleCartClick}>
               <img
                 src={require("../assets/icons/nav/EmptyCart.svg")}
                 alt="icon"
