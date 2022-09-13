@@ -84,11 +84,7 @@ class Nav extends Component {
                 })}
               </ul>
             </div>
-            <a
-              className="cartIcon"
-              onMouseDown={this.context.handleCartClick}
-              ref={this.cartRef}
-            >
+            <a className="cartIcon" onMouseDown={this.context.handleCartClick}>
               <img
                 src={require("../assets/icons/nav/EmptyCart.svg")}
                 alt="icon"
