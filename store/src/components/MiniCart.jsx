@@ -5,10 +5,23 @@ import { AppContext } from "./context/AppContext";
 
 class MiniCart extends Component {
   static contextType = AppContext;
+  constructor(props) {
+    super(props);
+    this.cartRef = React.createRef();
+  }
+  cartHandler = (event) => {
+    if (this.cartRef.current && !this.cartRef.current.contains(event.target)) {
+      this.context.cartOutsideClick();
+    }
+  };
+  componentDidMount = () => {
+    document.addEventListener("mousedown", this.cartHandler);
+  };
+
   render() {
     return (
       <div className="mini-cart-overlay">
-        <div className="mini-cart-wrapper">
+        <div className="mini-cart-wrapper" ref={this.cartRef}>
           <h3 className="bag">
             My Bag,{" "}
             <span>

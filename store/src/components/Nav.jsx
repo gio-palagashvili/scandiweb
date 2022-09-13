@@ -16,14 +16,9 @@ class Nav extends Component {
       this.context.currencyOutsideClick();
     }
   };
-  cartHandler = (event) => {
-    if (!this.cartRef.current.contains(event.target)) {
-      this.context.cartOutsideClick();
-    }
-  };
+
   componentDidMount = () => {
     document.addEventListener("mousedown", this.currhandler);
-    // document.addEventListener("mousedown", this.cartHandler);
   };
   componentWillUnmount = () => {
     document.removeEventListener("mousedown", this.currhandler);
