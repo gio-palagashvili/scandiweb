@@ -1,28 +1,15 @@
-import { canonicalStringify } from "@apollo/client/cache";
 import React, { Component } from "react";
 import "../style/navbar.css";
 import { AppContext } from "./context/AppContext";
-import MiniCart from "./MiniCart";
+import CartNav from "./NavItems/CartNav";
+import Currency from "./NavItems/Currency";
 
 class Nav extends Component {
   static contextType = AppContext;
   constructor(props) {
     super(props);
-    this.currencyRef = React.createRef();
-    this.cartRef = React.createRef();
   }
-  currhandler = (event) => {
-    if (!this.currencyRef.current.contains(event.target)) {
-      this.context.currencyOutsideClick();
-    }
-  };
 
-  componentDidMount = () => {
-    document.addEventListener("mousedown", this.currhandler);
-  };
-  componentWillUnmount = () => {
-    document.removeEventListener("mousedown", this.currhandler);
-  };
   render() {
     return (
       <>
@@ -52,58 +39,10 @@ class Nav extends Component {
             />
           </div>
           <div className="cart-div">
-            <a
-              onClick={this.context.handleCurrencyClick}
-              ref={this.currencyRef}
-            >
-              <h1>{localStorage.getItem("currentCurrency")}</h1>
-              <img
-                src={require("../assets/icons/nav/arrow.svg")}
-                alt="icon"
-                className={
-                  this.context.state.currencyOpen ? "arrowRotated" : "arrow"
-                }
-              />
-            </a>
-            <div
-              className={
-                this.context.state.currencyOpen ? "currency-div" : "closed"
-              }
-              ref={this.currencyRef}
-            >
-              <ul>
-                {this.context.state.currencies.map((curr, index) => {
-                  return (
-                    <li
-                      key={index}
-                      onClick={() => {
-                        this.context.handleCurrencyChange(curr.split(" ")[0]);
-                      }}
-                    >
-                      <a>{curr}</a>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-            <a className="cartIcon" onClick={this.context.handleCartClick}>
-              <img
-                src={require("../assets/icons/nav/EmptyCart.svg")}
-                alt="icon"
-              />
-              {this.context.state.itemsInCart.length > 0 ? (
-                <div className="circle">
-                  {this.context.state.itemsInCart.reduce((acc, item) => {
-                    return acc + item.quantity;
-                  }, 0)}
-                </div>
-              ) : (
-                ""
-              )}
-            </a>
+            <Currency />
+            <CartNav />
           </div>
         </div>
-        {this.context.state.cartOpen ? <MiniCart /> : ""}
       </>
     );
   }

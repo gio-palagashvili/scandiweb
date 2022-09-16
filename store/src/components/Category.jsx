@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Item from "./Item";
 import { LOAD_CATEGORY_ITEMS } from "./GraphQL/Queries";
 import { Query } from "@apollo/client/react/components";
-import { Link } from "react-router-dom";
 import Nav from "./Nav";
 import "../style/category.css";
 import { AppContext } from "./context/AppContext";
@@ -33,7 +32,6 @@ class Category extends Component {
                 const items = data.category.products;
                 return items.map((item, index) => {
                   const prices = item.prices;
-
                   return (
                     <Item
                       key={index}

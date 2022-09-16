@@ -66,6 +66,9 @@
   width: 33%;
   justify-content: flex-end;
 }
+.nav-wrapper .cart-div .refDiv {
+  display: flex;
+}
 .nav-wrapper .cart-div h1 {
   font-size: 18px;
   font-family: "r-semibold";

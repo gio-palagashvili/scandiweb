@@ -17,6 +17,9 @@ class MiniCart extends Component {
   componentDidMount = () => {
     document.addEventListener("mousedown", this.cartHandler);
   };
+  componentWillUnmount = () => {
+    document.addEventListener("mousedown", this.cartHandler);
+  };
 
   render() {
     return (
@@ -34,25 +37,24 @@ class MiniCart extends Component {
           {this.context.state.itemsInCart.map((item, index) => {
             return <MiniCartItem item={item} key={index} />;
           })}
+          <p>
+            Total :
+            <span>
+              {localStorage.getItem("currentCurrency")}
+              {Math.round(
+                this.context.state.itemsInCart.reduce((acc, item) => {
+                  const itemPrice =
+                    item.product.prices.find(
+                      (price) =>
+                        price.currency.symbol ===
+                        localStorage.getItem("currentCurrency")
+                    ).amount * item.quantity;
+                  return acc + itemPrice;
+                }, 0) * 10
+              ) / 10}
+            </span>
+          </p>
           <div className="buttons">
-            <p>
-              Total :
-              <span>
-                {localStorage.getItem("currentCurrency")}
-                {Math.round(
-                  this.context.state.itemsInCart.reduce((acc, item) => {
-                    const itemPrice =
-                      item.product.prices.find(
-                        (price) =>
-                          price.currency.symbol ===
-                          localStorage.getItem("currentCurrency")
-                      ).amount * item.quantity;
-                    return acc + itemPrice;
-                  }, 0) * 10
-                ) / 10}
-              </span>
-            </p>
-
             <a href="/cart">
               <button className="view">view bag</button>
             </a>

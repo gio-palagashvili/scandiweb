@@ -21,13 +21,15 @@
 }
 
 .mini-cart-overlay {
-  z-index: 200;
+  z-index: 2;
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
-  height: 93.9%;
+  height: 100%;
   position: absolute;
+  top: 6%;
   left: 0;
   transition: 1s;
+
   .mini-cart-wrapper::-webkit-scrollbar {
     display: none;
   }
@@ -40,14 +42,19 @@
     right: 15%;
     background-color: white;
     width: 20%;
+    p {
+      margin-bottom: 5%;
+      font-family: "r-bold";
+      span {
+        margin-left: 60%;
+      }
+    }
     .buttons {
       margin-bottom: 50px;
-      p {
-        margin-bottom: 5%;
-        font-family: "r-bold";
-        span {
-          margin-left: 60%;
-        }
+      display: flex;
+      a {
+        width: 48%;
+        text-decoration: none;
       }
       .view {
         text-transform: uppercase;
@@ -55,9 +62,9 @@
         background-color: transparent;
         color: #1d1f22;
         border: 1px solid #1d1f22;
-        width: 48%;
         height: 43px;
         margin-right: 2%;
+        width: 100%;
         cursor: pointer;
         transition: 0.4s;
       }
