@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AttrSmall from "./Attributes/AttrSmall";
 import { AppContext } from "./context/AppContext";
+
 class MiniCartItem extends Component {
   static contextType = AppContext;
   constructor(props) {

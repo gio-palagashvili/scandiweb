@@ -4,9 +4,9 @@ import { LOAD_CATEGORIES } from "./components/GraphQL/Queries";
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Category from "./components/Category";
 import ItemDetail from './components/ItemDetail';
-import Test from './components/Test';
 import Cart from "./components/Cart"
 import { AppProvider } from './components/context/AppContext';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -46,7 +46,6 @@ class App extends React.Component {
                 )
               })}
               <Route path="/:itemCategory/:id" element={<ItemDetail />} />
-              <Route path="/test" element={<Test />} />
               <Route path="/cart" element={<Cart />} />
             </Routes>
           </BrowserRouter>
