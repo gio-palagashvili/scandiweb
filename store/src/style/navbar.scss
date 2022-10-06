@@ -16,6 +16,9 @@ $focussedColor: #5ece7b;
 .closed {
   display: none;
 }
+a {
+  cursor: pointer;
+}
 .nav-wrapper {
   display: flex;
   height: 20%;

@@ -14,16 +14,24 @@ class Nav extends Component {
           <div className="text">
             <ul>
               {this.props.categories.map((category, index) => {
-                if (window.location.href.split("/")[3] === category) {
+                if (this.context.state.currCategory === category) {
                   return (
-                    <li className="focussed" key={index}>
-                      <a href={"/" + category}>{category}</a>
+                    <li
+                      className="focussed"
+                      key={index}
+                      onClick={() => this.context.setCategory(category)}
+                    >
+                      <a href>{category}</a>
                     </li>
                   );
                 }
                 return (
-                  <li className="" key={index}>
-                    <a href={"/" + category}>{category}</a>
+                  <li
+                    className=""
+                    key={index}
+                    onClick={() => this.context.setCategory(category)}
+                  >
+                    <a href>{category}</a>
                   </li>
                 );
               })}

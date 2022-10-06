@@ -100,8 +100,12 @@ class CartItem extends Component {
               />
               {this.props.item.product.gallery.length > 1 ? (
                 <div className="arrows">
-                  <button onClick={this.handlePrevImage}>&lt;</button>
-                  <button onClick={this.handleNextImage}>&gt;</button>
+                  <button onClick={this.handlePrevImage}>
+                    <i class="arrow left"></i>
+                  </button>
+                  <button onClick={this.handleNextImage}>
+                    <i class="arrow right"></i>
+                  </button>
                 </div>
               ) : (
                 ""

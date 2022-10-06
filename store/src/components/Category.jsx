@@ -14,17 +14,14 @@ class Category extends Component {
   render() {
     return (
       <>
-        <Nav
-          category={this.props.category}
-          categories={this.props.categories}
-        />
+        <Nav categories={this.props.categories} />
         <div className="category-wrapper">
-          <h1 className="category-title">{this.props.category}</h1>
+          <h1 className="category-title">{this.context.state.currCategory}</h1>
           <div className="items-wrapper">
             <Query
               query={LOAD_CATEGORY_ITEMS}
               variables={{
-                input: { title: this.props.category },
+                input: { title: this.context.state.currCategory },
               }}
             >
               {({ loading, error, data }) => {
@@ -32,17 +29,20 @@ class Category extends Component {
                 const items = data.category.products;
                 return items.map((item, index) => {
                   const prices = item.prices;
-                  return (
-                    <Item
-                      key={index}
-                      stock={item.inStock}
-                      image={item.gallery[0]}
-                      name={item.name}
-                      linked={`/${data.category.name}/${item.id}`}
-                      clicked={() => this.handldeAddCartDefault(item)}
-                      prices={prices}
-                    />
-                  );
+                  if (data.category.name === this.context.state.currCategory) {
+                    return (
+                      <Item
+                        key={index}
+                        stock={item.inStock}
+                        image={item.gallery[0]}
+                        name={item.name}
+                        linked={`/${data.category.name}/${item.id}`}
+                        clicked={() => this.handldeAddCartDefault(item)}
+                        prices={prices}
+                      />
+                    );
+                  }
+                  return null;
                 });
               }}
             </Query>

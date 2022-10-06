@@ -24,6 +24,7 @@ export class AppProvider extends Component {
         currencyOpen: false,
         cartOpen: false,
         categories: [],
+        currCategory: "all",
         currencies: [],
         currentCurrency: (localStorage.getItem("currentCurrency")) ?
             localStorage.getItem("currentCurrency") : localStorage.setItem("currentCurrency", "$"),
@@ -134,13 +135,17 @@ export class AppProvider extends Component {
         })
         this.addToCart(item);
     }
+    setCategory = (categoryName) => {
+        this.setState({ ...this.state, currCategory: categoryName });
+    }
     render() {
         const state = this.state;
         const {
             handleCurrencyClick, handleCurrencyChange,
             handleCartClick, addToCart, editProduct,
             handleQuantity, handleOrder, currencyOutsideClick,
-            addCartDefault, cartOutsideClick
+            addCartDefault, cartOutsideClick,
+            setCategory
         } = this;
 
         return (
@@ -156,6 +161,7 @@ export class AppProvider extends Component {
                 handleOrder,
                 currencyOutsideClick,
                 cartOutsideClick,
+                setCategory,
             }}>
                 {this.props.children}
             </AppContext.Provider >

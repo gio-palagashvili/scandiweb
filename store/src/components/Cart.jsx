@@ -12,7 +12,7 @@ class Cart extends Component {
         <Nav categories={this.context.state.categories} />
         <div className="cart-wrapper">
           <h2 className="title">Cart</h2>
-          <hr color="#E5E5E5" style={{ marginBottom: "2%", marginTop: "5%" }} />
+          <hr color="#E5E5E5" className="hrCart" />
           {this.context.state.itemsInCart.length === 0 ? (
             <h1 className="empty">your cart is empty</h1>
           ) : (

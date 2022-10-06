@@ -36,15 +36,9 @@ class App extends React.Component {
         <AppProvider >
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Navigate to="/all" replace={true} />} />
-              {this.state.categories.map((categoryName, index) => {
-                return (
-                  <Route path={categoryName} key={index} element={<Category
-                    categories={this.state.categories}
-                    category={categoryName}
-                  />} />
-                )
-              })}
+              <Route path="/" element={<Category
+                categories={this.state.categories}
+              />} />
               <Route path="/:itemCategory/:id" element={<ItemDetail />} />
               <Route path="/cart" element={<Cart />} />
             </Routes>
