@@ -31,7 +31,7 @@ class Cart extends Component {
             <div className="values">
               <p>
                 {localStorage.getItem("currentCurrency")}
-                {Math.round(
+                {(
                   this.context.state.itemsInCart.reduce((acc, item) => {
                     const itemPrice =
                       item.product.prices.find(
@@ -41,9 +41,8 @@ class Cart extends Component {
                       ).amount * item.quantity;
                     return acc + itemPrice;
                   }, 0) *
-                    (21 / 100) *
-                    10
-                ) / 10}
+                  (21 / 100)
+                ).toFixed(2)}
               </p>
               <p>
                 {this.context.state.itemsInCart.reduce((acc, item) => {
@@ -52,8 +51,8 @@ class Cart extends Component {
               </p>
               <p>
                 {localStorage.getItem("currentCurrency")}
-                {Math.round(
-                  this.context.state.itemsInCart.reduce((acc, item) => {
+                {this.context.state.itemsInCart
+                  .reduce((acc, item) => {
                     const itemPrice =
                       item.product.prices.find(
                         (price) =>
@@ -61,8 +60,8 @@ class Cart extends Component {
                           localStorage.getItem("currentCurrency")
                       ).amount * item.quantity;
                     return acc + itemPrice;
-                  }, 0) * 10
-                ) / 10}
+                  }, 0)
+                  .toFixed(2)}
               </p>
             </div>
           </div>

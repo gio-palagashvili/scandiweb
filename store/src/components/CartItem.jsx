@@ -26,26 +26,9 @@ class CartItem extends Component {
       this.setState({ ...this.state, index: this.state.index - 1 });
     }
   };
-  handleAttributeClick = (key) => {
-    const element = document.getElementById(key.target.id);
-    document.getElementsByName(key.target.name).forEach((element) => {
-      if (element.classList.contains("selected")) {
-        element.classList.remove("selected");
-      }
-    });
-    element.classList.add("selected");
-
-    const newAttr = {
-      ...this.props.item.selectedAttributes,
-      [key.target.name]: key.target.value,
-    };
-
-    this.context.editProduct(this.props.item.product.id, newAttr);
-  };
   handleQuantityClick = (quantity) => {
-    this.context.handleQuantity(this.props.item.product.id, quantity);
+    this.context.handleQuantity(this.props.item, quantity);
   };
-
   render() {
     return (
       <>
@@ -69,6 +52,7 @@ class CartItem extends Component {
                     price.amount
                   }`;
                 }
+                return undefined;
               })}
             </h3>
             <div className="attr">
@@ -79,9 +63,6 @@ class CartItem extends Component {
                     attrName={attr.name}
                     select={this.props.item.selectedAttributes}
                     key={index}
-                    clicked={(event) => {
-                      this.handleAttributeClick(event);
-                    }}
                   />
                 );
               })}

@@ -23,7 +23,7 @@ class Currency extends Component {
   render() {
     return (
       <div ref={this.currencyRef} className="refDiv">
-        <a onClick={this.context.handleCurrencyClick}>
+        <a onClick={this.context.handleCurrencyClick} href>
           <h1>{localStorage.getItem("currentCurrency")}</h1>
           <img
             src={require("../../assets/icons/nav/arrow.svg")}
@@ -47,7 +47,7 @@ class Currency extends Component {
                     this.context.handleCurrencyChange(curr.split(" ")[0]);
                   }}
                 >
-                  <a>{curr}</a>
+                  <a href>{curr}</a>
                 </li>
               );
             })}

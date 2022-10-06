@@ -35,7 +35,7 @@ class Item extends Component {
         }}
       >
         <div className="p-div">
-          <Link to={this.props.stock ? this.props.linked : ""}>
+          <Link to={this.props.linked}>
             {!this.props.stock ? (
               <h3 className="out-stock">OUT OF STOCK</h3>
             ) : (
@@ -47,15 +47,19 @@ class Item extends Component {
               className="product-image"
             />
           </Link>
-          <img
-            src={require("../assets/icons/Item/circleCart.svg")}
-            alt="add to cart"
-            style={style}
-            onClick={this.props.clicked}
-            className="add-cart"
-          />
+          {this.props.stock ? (
+            <img
+              src={require("../assets/icons/Item/circleCart.svg")}
+              alt="add to cart"
+              style={style}
+              onClick={this.props.clicked}
+              className="add-cart"
+            />
+          ) : (
+            ""
+          )}
 
-          <Link to={this.props.stock ? this.props.linked : ""}>
+          <Link to={this.props.linked}>
             <h4>{this.props.name}</h4>
             <span>
               {this.props.prices.map((price, index) => {
@@ -66,6 +70,7 @@ class Item extends Component {
                   return `${localStorage.getItem("currentCurrency")} 
                 ${price.amount}`;
                 }
+                return undefined;
               })}
             </span>
           </Link>

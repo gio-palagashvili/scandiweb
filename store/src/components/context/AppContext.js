@@ -98,12 +98,12 @@ export class AppProvider extends Component {
             localStorage.setItem("cart", JSON.stringify(this.state.itemsInCart))
         });
     }
-    handleQuantity = (productId, quantity) => {
+    handleQuantity = (product, quantity) => {
         let newState = this.state.itemsInCart;
         newState = newState.filter((item) => {
-            if (item.product.id === productId) {
+            if (item.product.id === product.product.id && product.selectedAttributes === item.selectedAttributes) {
                 if (item.quantity + quantity === 0) {
-                    return;
+                    return undefined;
                 }
                 item.quantity += quantity;
                 return item;
@@ -126,12 +126,11 @@ export class AppProvider extends Component {
             selectedAttributes: {}
         }
         product.attributes.map(attr => {
-            const attrA = attr.name;
             const attrB = attr.items[0].value;
-
             item.selectedAttributes = {
                 ...item.selectedAttributes, [attr.name]: attrB
             }
+            return attr;
         })
         this.addToCart(item);
     }

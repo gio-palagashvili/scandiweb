@@ -5,6 +5,7 @@ import { Query } from "@apollo/client/react/components";
 import "../style/itemDetail.css";
 import Attribute from "./Attributes/Attribute";
 import { AppContext } from "./context/AppContext";
+import parser from "html-react-parser";
 
 class ItemDetail extends Component {
   static contextType = AppContext;
@@ -91,7 +92,6 @@ class ItemDetail extends Component {
             const item = data.product;
             const gallery = item.gallery;
             const prices = item.prices;
-
             return (
               <div className="detail-container">
                 <div className="carussel">
@@ -138,31 +138,37 @@ class ItemDetail extends Component {
                   <div className="price">
                     <h4>price:</h4>
                     <h3>
-                      {prices.map((price, index) => {
+                      {prices.map((price) => {
                         if (
-                          price.currency.symbol ===
+                          price.currency.symbol !==
                           localStorage.getItem("currentCurrency")
                         ) {
-                          return `${localStorage.getItem("currentCurrency")}${
-                            price.amount
-                          }`;
+                          return undefined;
                         }
+                        return `${localStorage.getItem("currentCurrency")}${
+                          price.amount
+                        }`;
                       })}
                     </h3>
-                    <p>{this.state.error}</p>
-                    <p>
-                      {this.state.message
-                        ? `${this.state.message} x ${this.state.messNumber}`
-                        : ""}
-                    </p>
+                    {this.state.error ? <p>{this.state.error}</p> : null}
+                    {this.state.message ? (
+                      <p>
+                        {`${this.state.message} x ${this.state.messNumber}`}
+                      </p>
+                    ) : null}
 
-                    <button onClick={this.checkItem.bind(this)}>
-                      Add to Cart
+                    <button
+                      onClick={item.inStock ? this.checkItem.bind(this) : null}
+                      className={item.inStock ? "" : "out-of-stock"}
+                    >
+                      {item.inStock ? "Add to cart" : "Out of stock"}
                     </button>
 
-                    <p
-                      dangerouslySetInnerHTML={{ __html: item.description }}
-                    ></p>
+                    {item.description.includes("<") ? (
+                      parser(item.description)
+                    ) : (
+                      <p>{parser(item.description)}</p>
+                    )}
                   </div>
                 </div>
               </div>

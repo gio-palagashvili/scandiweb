@@ -65,6 +65,7 @@ export const LOAD_ITEM_BY_ID = gql`
           symbol
         }
       }
+      inStock
     }
   }
 `;

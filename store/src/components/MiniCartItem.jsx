@@ -4,11 +4,8 @@ import { AppContext } from "./context/AppContext";
 
 class MiniCartItem extends Component {
   static contextType = AppContext;
-  constructor(props) {
-    super(props);
-  }
   handleQuantityClick = (quantity) => {
-    this.context.handleQuantity(this.props.item.product.id, quantity);
+    this.context.handleQuantity(this.props.item, quantity);
   };
   render() {
     return (
@@ -25,13 +22,14 @@ class MiniCartItem extends Component {
           <h4 className="price">
             {this.props.item.product.prices.map((price) => {
               if (
-                price.currency.symbol ===
+                price.currency.symbol !==
                 localStorage.getItem("currentCurrency")
               ) {
-                return `${localStorage.getItem("currentCurrency")}${
-                  price.amount
-                }`;
+                return undefined;
               }
+              return `${localStorage.getItem("currentCurrency")}${
+                price.amount
+              }`;
             })}
           </h4>
           <div className="attr">
@@ -71,7 +69,7 @@ class MiniCartItem extends Component {
           </div>
         </div>
         <div className="pictures-section">
-          <img src={this.props.item.product.gallery[0]} alt="" />
+          <img src={this.props.item.product.gallery[0]} alt="product" />
         </div>
       </div>
     );

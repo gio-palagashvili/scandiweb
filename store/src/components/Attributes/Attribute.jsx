@@ -15,10 +15,14 @@ class Attribute extends Component {
                 <li key={index}>
                   <button
                     value={item.value}
-                    className="color-button"
                     onClick={this.props.clicked}
                     name={this.props.type.name}
                     style={style}
+                    className={
+                      item.value === "#FFFFFF"
+                        ? "bordered color-button"
+                        : "color-button"
+                    }
                     id={`${this.props.type.name}${index}`}
                   ></button>
                 </li>

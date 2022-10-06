@@ -41,8 +41,8 @@ class MiniCart extends Component {
             Total :
             <span>
               {localStorage.getItem("currentCurrency")}
-              {Math.round(
-                this.context.state.itemsInCart.reduce((acc, item) => {
+              {this.context.state.itemsInCart
+                .reduce((acc, item) => {
                   const itemPrice =
                     item.product.prices.find(
                       (price) =>
@@ -50,8 +50,8 @@ class MiniCart extends Component {
                         localStorage.getItem("currentCurrency")
                     ).amount * item.quantity;
                   return acc + itemPrice;
-                }, 0) * 10
-              ) / 10}
+                }, 0)
+                .toFixed(2)}
             </span>
           </p>
           <div className="buttons">

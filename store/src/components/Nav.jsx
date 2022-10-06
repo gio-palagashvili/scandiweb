@@ -6,9 +6,6 @@ import Currency from "./NavItems/Currency";
 
 class Nav extends Component {
   static contextType = AppContext;
-  constructor(props) {
-    super(props);
-  }
 
   render() {
     return (

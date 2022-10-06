@@ -23,7 +23,6 @@ class Attr extends Component {
                         ? "color-button color-button-selected"
                         : "color-button"
                     }
-                    onClick={this.props.clicked.bind(this)}
                     name={this.props.attr.name}
                     style={style}
                     id={`${this.props.attr.name}${index}`}
@@ -42,7 +41,6 @@ class Attr extends Component {
                       ? "selected other-attr"
                       : "other-attr"
                   }
-                  onClick={this.props.clicked.bind(this)}
                   name={this.props.attr.name}
                   id={`${this.props.attr.name}${index}`}
                 >

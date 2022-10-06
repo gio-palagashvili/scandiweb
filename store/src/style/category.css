@@ -22,7 +22,6 @@
 }
 
 .disabled-item {
-  pointer-events: none !important;
   cursor: -webkit-grab !important;
   cursor: grab !important;
   filter: grayscale(100%);
@@ -63,8 +62,8 @@
 .items-wrapper .category-item .product-image {
   height: 354px;
   width: 330px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
 }
 .items-wrapper .category-item .add-cart:hover {
   cursor: pointer;

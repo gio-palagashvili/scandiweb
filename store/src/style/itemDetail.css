@@ -12,9 +12,17 @@
   src: url("../assets/fonts/roboto/Roboto-Medium.ttf");
 }
 @font-face {
+  font-family: "roboto-l";
+  src: url("../assets/fonts/roboto/Roboto-Light.ttf");
+}
+@font-face {
   font-family: "sans-light";
   src: url("../assets/fonts/sans/SourceSansPro-Light.otf");
 }
+.bordered {
+  border: 1px solid black !important;
+}
+
 .detail-container {
   display: flex;
   flex-direction: row;
@@ -43,7 +51,6 @@
   font-family: "r-semibold";
 }
 .detail-container .details h2 {
-  margin-bottom: 20%;
   font-family: "r-regular";
 }
 .detail-container .details .attr h3 {
@@ -95,6 +102,7 @@
 }
 .detail-container .details .price {
   margin-top: 10%;
+  width: 90%;
 }
 .detail-container .details .price h4 {
   margin-top: 12%;
@@ -118,12 +126,18 @@
   width: 292px;
   height: 52px;
   background-color: #5ece7b;
-  width: 100%;
+  width: 290px;
+}
+.detail-container .details .price .out-of-stock {
+  background-color: gray;
+  pointer-events: none;
+  margin-bottom: 2%;
 }
 .detail-container .details .price button:hover {
   background-color: #56bf72;
 }
 .detail-container .details .price p {
   margin-top: 10%;
-  font-family: roboto;
+  font-family: "roboto-l";
+  font-weight: 600;
 }/*# sourceMappingURL=itemDetail.css.map */

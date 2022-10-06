@@ -7,7 +7,7 @@ class CartNav extends Component {
   render() {
     return (
       <>
-        <a className="cartIcon" onClick={this.context.handleCartClick}>
+        <a className="cartIcon" onClick={this.context.handleCartClick} href>
           <img
             src={require("../../assets/icons/nav/EmptyCart.svg")}
             alt="icon"

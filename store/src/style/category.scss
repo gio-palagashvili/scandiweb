@@ -23,7 +23,6 @@ $focussedColor: #5ece7b;
   width: 200px;
 }
 .disabled-item {
-  pointer-events: none !important;
   cursor: grab !important;
   filter: grayscale(100%);
   opacity: 0.7;
@@ -60,7 +59,7 @@ $focussedColor: #5ece7b;
     .product-image {
       height: 354px;
       width: 330px;
-      object-fit: cover;
+      object-fit: scale-down;
     }
     .add-cart:hover {
       cursor: pointer;
