@@ -37,8 +37,10 @@ class ItemDetail extends Component {
     document.getElementsByName(key.target.name).forEach((element) => {
       if (element.classList.contains("selected")) {
         element.classList.remove("selected");
+        if (element.value === "#FFFFFF") element.classList.add("bordered");
       }
     });
+    if (element.value === "#FFFFFF") element.classList.remove("bordered");
     element.classList.add("selected");
 
     this.setState({
