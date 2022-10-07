@@ -1,7 +1,7 @@
 import React from 'react'
 import { client } from "./components/GraphQL/index";
 import { LOAD_CATEGORIES } from "./components/GraphQL/Queries";
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Category from "./components/Category";
 import ItemDetail from './components/ItemDetail';
 import Cart from "./components/Cart"

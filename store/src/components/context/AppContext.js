@@ -71,7 +71,6 @@ export class AppProvider extends Component {
             let newCart = this.state.itemsInCart;
             newCart = newCart.map((item) => {
                 if (JSON.stringify(item.selectedAttributes) === JSON.stringify(product.selectedAttributes)) {
-                    console.log(item)
                     item.quantity = item.quantity + 1
                 }
                 return item;

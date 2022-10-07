@@ -21,7 +21,15 @@ class Nav extends Component {
                       key={index}
                       onClick={() => this.context.setCategory(category)}
                     >
-                      <a href>{category}</a>
+                      <a
+                        href={
+                          window.location.href.split("/").length > 4
+                            ? "/"
+                            : null
+                        }
+                      >
+                        {category}
+                      </a>
                     </li>
                   );
                 }
@@ -31,7 +39,13 @@ class Nav extends Component {
                     key={index}
                     onClick={() => this.context.setCategory(category)}
                   >
-                    <a href>{category}</a>
+                    <a
+                      href={
+                        window.location.href.split("/").length > 4 ? "/" : null
+                      }
+                    >
+                      {category}
+                    </a>
                   </li>
                 );
               })}

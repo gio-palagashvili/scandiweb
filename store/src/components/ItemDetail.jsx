@@ -54,16 +54,20 @@ class ItemDetail extends Component {
     });
   };
   checkItem() {
-    if (!this.state.attr) {
-      this.setState({ ...this.state, error: "must select an attribute" });
+    if (
+      document.getElementsByClassName("selected").length !==
+      this.state.product.product.attributes.length
+    ) {
+      this.setState({
+        ...this.state,
+        error: "no attribute can remain unselected",
+      });
     } else {
-      this.setState({ ...this.state, error: "" });
-
       this.context.addToCart(this.state.product);
-      this.setState({ ...this.state, error: "" });
 
       this.setState({
         ...this.state,
+        error: "",
         message: "item added to cart",
         messNumber: this.state.messNumber + 1,
       });
