@@ -23,7 +23,8 @@ class Nav extends Component {
                     >
                       <a
                         href={
-                          window.location.href.split("/").length > 4
+                          window.location.href.split("/").length > 4 ||
+                          window.location.href.includes("cart")
                             ? "/"
                             : null
                         }
@@ -41,7 +42,10 @@ class Nav extends Component {
                   >
                     <a
                       href={
-                        window.location.href.split("/").length > 4 ? "/" : null
+                        window.location.href.split("/").length > 4 ||
+                        window.location.href.includes("cart")
+                          ? "/"
+                          : null
                       }
                     >
                       {category}

@@ -74,7 +74,7 @@
   cursor: pointer;
   border: none;
 }
-.detail-container .details .attr ul .color-button:focus {
+.detail-container .details .attr ul .color-button-selected {
   background-clip: content-box;
   padding: 1px;
   border: 1px solid #56bf72;

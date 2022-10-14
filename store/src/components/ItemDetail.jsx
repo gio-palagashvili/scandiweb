@@ -35,13 +35,22 @@ class ItemDetail extends Component {
   handleAttributeClick = (key) => {
     const element = document.getElementById(key.target.id);
     document.getElementsByName(key.target.name).forEach((element) => {
-      if (element.classList.contains("selected")) {
-        element.classList.remove("selected");
+      if (
+        element.classList.contains("selected") ||
+        element.classList.contains("color-button-selected")
+      ) {
         if (element.value === "#FFFFFF") element.classList.add("bordered");
+
+        element.classList.remove("color-button-selected");
+        element.classList.remove("selected");
       }
     });
-    if (element.value === "#FFFFFF") element.classList.remove("bordered");
-    element.classList.add("selected");
+    if (element.classList.contains("color-button")) {
+      if (element.value === "#FFFFFF") element.classList.remove("bordered");
+      element.classList.add("color-button-selected");
+    } else {
+      element.classList.add("selected");
+    }
 
     this.setState({
       ...this.state,

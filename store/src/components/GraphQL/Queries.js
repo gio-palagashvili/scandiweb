@@ -15,6 +15,7 @@ export const LOAD_CATEGORIES = gql`
     }
   }
 `;
+
 export const LOAD_CATEGORY_ITEMS = gql`
   query($input: CategoryInput) {
     category(input: $input) {
