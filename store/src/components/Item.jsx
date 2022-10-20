@@ -66,7 +66,7 @@ class Item extends Component {
                   localStorage.getItem("currentCurrency")
                 ) {
                   return `${localStorage.getItem("currentCurrency")} 
-                ${price.amount}`;
+                ${price.amount.toFixed(2)}`;
                 }
                 return undefined;
               })}
