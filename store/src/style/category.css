@@ -65,6 +65,10 @@
   -o-object-fit: scale-down;
      object-fit: scale-down;
 }
+.items-wrapper .category-item .add-cart {
+  margin-bottom: -10%;
+  margin-left: -20%;
+}
 .items-wrapper .category-item .add-cart:hover {
   cursor: pointer;
 }

@@ -12,8 +12,6 @@ class Item extends Component {
   }
   render() {
     const style = {
-      marginBottom: "-10%",
-      marginLeft: "-20%",
       visibility: this.state.isHover ? "visible" : "hidden",
     };
     const box = {
