@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { client } from "../GraphQL/index";
-import { LOAD_CATEGORIES } from "../GraphQL/Queries";
-import { LOAD_CURRENCY } from "../GraphQL/Queries";
+import { LOAD_CATEGORIES, LOAD_CURRENCY } from "../GraphQL/Queries";
 export const AppContext = React.createContext();
 
 export class AppProvider extends Component {
@@ -42,6 +41,7 @@ export class AppProvider extends Component {
                 })
             });
         })
+
     }
     handleCartClick = () => {
         this.setState({ ...this.state, cartOpen: !this.state.cartOpen });

@@ -70,3 +70,35 @@ export const LOAD_ITEM_BY_ID = gql`
     }
   }
 `;
+export const GET_ALL_BY_CATEGORY = gql`
+query($input: CategoryInput) {
+    category(input: $input) {
+       products {
+      id
+      name
+      inStock
+      gallery
+      description
+      category
+      attributes {
+        id
+        name
+        items {
+          displayValue
+          value
+          id
+        }
+        type
+      }
+      prices {
+        currency {
+          symbol
+          label
+        }
+        amount
+      }
+      brand
+    }
+    }
+  }
+`;
