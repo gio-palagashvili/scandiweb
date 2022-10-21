@@ -8,6 +8,10 @@
   src: url(../assets/fonts/raleway/Raleway-SemiBold.ttf);
 }
 @font-face {
+  font-family: "r-light";
+  src: url(../assets/fonts/raleway/Raleway-Light.ttf);
+}
+@font-face {
   font-family: "roboto";
   src: url("../assets/fonts/roboto/Roboto-Medium.ttf");
 }
@@ -27,6 +31,27 @@
   flex-direction: row;
   margin-top: 5%;
   width: 100%;
+  .no-stock {
+    filter: grayscale(1);
+    opacity: 0.7;
+  }
+  .no-stock-small {
+    opacity: 1;
+    font-family: "r-light";
+    left: 2%;
+    position: absolute;
+    margin-top: 30%;
+  }
+  .no-stock-big {
+    opacity: 1;
+    font-family: "r-light";
+    position: absolute;
+    left: 30%;
+    top: 40%;
+  }
+  .cover {
+    position: relative;
+  }
   .carussel::-webkit-scrollbar {
     display: none;
   }
@@ -41,6 +66,7 @@
     }
   }
   .main-image {
+    margin: auto;
     img {
       width: 500px;
     }

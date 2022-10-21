@@ -24,7 +24,6 @@ class ItemDetail extends Component {
       },
     };
   }
-
   componentDidMount() {
     const id = window.location.href.split("/").pop();
     this.setState({ ...this.state, itemId: id });
@@ -112,17 +111,38 @@ class ItemDetail extends Component {
                 <div className="carussel">
                   {gallery.map((image, index) => {
                     return (
-                      <img
-                        alt=""
-                        src={image}
-                        key={index}
-                        onClick={() => this.changeMain(index)}
-                      />
+                      <div key={index} className="cover">
+                        <img
+                          alt=""
+                          src={image}
+                          onClick={() => this.changeMain(index)}
+                          className={!item.inStock ? "no-stock" : ""}
+                        />
+                        {!item.inStock ? (
+                          <span
+                            className="no-stock-small"
+                            onClick={() => this.changeMain(index)}
+                          >
+                            OUT OF STOCK
+                          </span>
+                        ) : (
+                          ""
+                        )}
+                      </div>
                     );
                   })}
                 </div>
                 <div className="main-image">
-                  <img src={item.gallery[this.state.acitveIndex]} alt="" />
+                  <img
+                    src={item.gallery[this.state.acitveIndex]}
+                    alt=""
+                    className={!item.inStock ? "no-stock" : ""}
+                  />
+                  {!item.inStock ? (
+                    <h1 className="no-stock-big">OUT OF STOCK</h1>
+                  ) : (
+                    ""
+                  )}
                 </div>
                 <div className="details">
                   <div>
